@@ -6,12 +6,10 @@
  * @return {object}
  */
 function convertToObject(sourceString) {
-  let attributePairs = sourceString.split(';');
-
-  attributePairs = attributePairs.filter((pair) => pair.trim() !== '');
-  attributePairs = attributePairs.map((pair) => pair.split(':'));
-
-  attributePairs = attributePairs
+  const attributePairs = sourceString
+    .split(';')
+    .filter((pair) => pair.trim() !== '')
+    .map((pair) => pair.split(':'))
     .map((pair) => {
       if (pair.length === 2) {
         return [pair[0].trim(), pair[1].trim()];
