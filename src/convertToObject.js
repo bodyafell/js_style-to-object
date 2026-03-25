@@ -21,13 +21,13 @@ function convertToObject(sourceString) {
     })
     .filter((pair) => pair !== null);
 
-  const result = attributePairs.reduce((acc, pair) => {
+  const styleObject = attributePairs.reduce((acc, pair) => {
     acc[pair[0]] = pair[1];
 
     return acc;
   }, {});
 
-  return result;
+  return styleObject;
 }
 
 module.exports = convertToObject;
